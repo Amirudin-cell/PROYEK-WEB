@@ -1,0 +1,13 @@
+body {
+    background-color: #e6f2ff;
+    font-family: Verdana, sans-serif;
+}
+h1 {
+    color: purple;
+    text-align: center;
+}
+p {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
