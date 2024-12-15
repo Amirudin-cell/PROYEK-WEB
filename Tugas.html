@@ -1,148 +1,192 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal Alumni - Lowongan Kerja</title>
+    <title>Lowongan Kerja CRUD</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Portal Alumni</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="Latihan_06_01.html">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tentang Kami</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Acara</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="lowongan-kerja.html">Lowongan Kerja</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Kontak</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-      <h1 class="display-4">Lowongan Kerja Tersedia</h1>
-      <p class="lead">
-        Cari peluang pekerjaan terbaik yang sesuai dengan keahlian Anda.
-      </p>
-    </header>
-
-    <div class="container my-5">
-      <h2 class="text-center">Daftar Lowongan Kerja</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">PT. ABC Teknologi</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Posisi: Web Developer
-              </h6>
-              <p class="card-text">
-                <strong>Deskripsi Pekerjaan:</strong> Membangun dan mengelola
-                website perusahaan dengan teknologi terbaru.
-              </p>
-              <p class="card-text">
-                <strong>Kualifikasi:</strong> Pengalaman dalam HTML, CSS,
-                JavaScript, dan React.
-              </p>
-              <p class="card-text">
-                <strong>Lokasi Kerja:</strong> Jakarta, Indonesia
-              </p>
-              <p class="card-text">
-                <strong>Tanggal Batas Lamaran:</strong> 30 Desember 2024
-              </p>
-              <a href="#" class="btn btn-primary">Lamaran Sekarang</a>
-            </div>
-          </div>
+    <div class="container mt-5">
+      <h2>Lowongan Kerja</h2>
+      <form id="jobForm" class="mb-4">
+        <div class="form-group">
+          <label for="jobKode">Kode:</label>
+          <input type="text" class="form-control" id="jobKode" required />
         </div>
-
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">PT. XYZ Digital</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Posisi: UI/UX Designer
-              </h6>
-              <p class="card-text">
-                <strong>Deskripsi Pekerjaan:</strong> Mendesain tampilan dan
-                pengalaman pengguna untuk aplikasi mobile dan web.
-              </p>
-              <p class="card-text">
-                <strong>Kualifikasi:</strong> Pengalaman menggunakan Adobe XD,
-                Figma, dan prototyping tools lainnya.
-              </p>
-              <p class="card-text">
-                <strong>Lokasi Kerja:</strong> Bandung, Indonesia
-              </p>
-              <p class="card-text">
-                <strong>Tanggal Batas Lamaran:</strong> 15 Januari 2025
-              </p>
-              <a href="#" class="btn btn-primary">Lamaran Sekarang</a>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for="jobPosisi">Posisi:</label>
+          <input type="text" class="form-control" id="jobPosisi" required />
         </div>
-
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">PT. MNO Solutions</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Posisi: Digital Marketing Specialist
-              </h6>
-              <p class="card-text">
-                <strong>Deskripsi Pekerjaan:</strong> Mengelola kampanye digital
-                marketing dan strategi SEO perusahaan.
-              </p>
-              <p class="card-text">
-                <strong>Kualifikasi:</strong> Pengalaman dalam SEO, Google Ads,
-                dan analisis web.
-              </p>
-              <p class="card-text">
-                <strong>Lokasi Kerja:</strong> Surabaya, Indonesia
-              </p>
-              <p class="card-text">
-                <strong>Tanggal Batas Lamaran:</strong> 10 Januari 2025
-              </p>
-              <a href="#" class="btn btn-primary">Lamaran Sekarang</a>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for="jobPerusahaan">Perusahaan:</label>
+          <input type="text" class="form-control" id="jobPerusahaan" required />
         </div>
-      </div>
+        <div class="form-group">
+          <label for="jobDeskripsi">Deskripsi:</label>
+          <input type="text" class="form-control" id="jobDeskripsi" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          Add Job
+        </button>
+      </form>
+      <button id="searchBtn" class="btn btn-secondary mb-3">Search</button>
+      <input
+        type="text"
+        id="searchQuery"
+        class="form-control mb-3"
+        placeholder="Search by Posisi or Perusahaan"
+      />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Kode</th>
+            <th>Posisi</th>
+            <th>Perusahaan</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="jobTableBody"></tbody>
+      </table>
     </div>
 
-    <footer class="bg-light text-center py-3">
-      <p>
-        &copy; 2024 Program Studi Sistem Informasi, Universitas Kuningan. Hak
-        Cipta Dilindungi.
-      </p>
-    </footer>
+    <script>
+      $(document).ready(function () {
+        const script_url =
+          "https://script.google.com/macros/s/AKfycbzMkS2y0KvvA_KPFEaF7rfiX6K8zPCaDssrW5fiBQLmr6akGm1BzTkJk0exILeWPvj7mg/exec";
+        loadJobs();
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        $("#jobForm").on("submit", function (event) {
+          event.preventDefault();
+          const kode = $("#jobKode").val();
+          const posisi = $("#jobPosisi").val();
+          const perusahaan = $("#jobPerusahaan").val();
+          const deskripsi = $("#jobDeskripsi").val();
+
+          $.ajax({
+            url: script_url,
+            type: "GET",
+            dataType: "jsonp",
+            data: {
+              kode: kode,
+              posisi: posisi,
+              perusahaan: perusahaan,
+              deskripsi: deskripsi,
+              action: "insert",
+            },
+            success: function (response) {
+              alert(response.result);
+              loadJobs();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("Request failed: ", textStatus, errorThrown);
+            },
+          });
+        });
+
+        $("#searchBtn").on("click", function () {
+          const query = $("#searchQuery").val();
+          searchJobs(query);
+        });
+
+        function loadJobs() {
+          $.ajax({
+            url: script_url,
+            type: "GET",
+            data: { action: "read" },
+            dataType: "json",
+            success: function (response) {
+              const tbody = $("#jobTableBody");
+              tbody.empty();
+
+              response.forEach((job) => {
+                tbody.append(`
+                  <tr>
+                    <td>${job.Kode}</td>
+                    <td>${job.Posisi}</td>
+                    <td>${job.Perusahaan}</td>
+                    <td>${job.Deskripsi}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm delete-btn" data-kode="${job.Kode}">Hapus</button>
+                    </td>
+                  </tr>
+                `);
+              });
+
+              $(".delete-btn").on("click", function () {
+                const kode = $(this).data("kode");
+                deleteJob(kode);
+              });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("Request failed:", textStatus, errorThrown);
+            },
+          });
+        }
+
+        function deleteJob(kode) {
+          const confirmDelete = confirm(
+            `Apakah Anda yakin ingin menghapus data dengan Kode: ${kode}?`
+          );
+          if (!confirmDelete) return;
+
+          $.ajax({
+            url: script_url,
+            type: "GET",
+            dataType: "jsonp",
+            data: { kode: kode, action: "delete" },
+            success: function (response) {
+              alert(response.result);
+              loadJobs();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("Request failed: ", textStatus, errorThrown);
+            },
+          });
+        }
+
+        function searchJobs(query) {
+          $.ajax({
+            url: script_url,
+            type: "GET",
+            data: { query: query, action: "search" },
+            dataType: "json",
+            success: function (response) {
+              const tbody = $("#jobTableBody");
+              tbody.empty();
+
+              response.forEach((job) => {
+                tbody.append(`
+                  <tr>
+                    <td>${job.Kode}</td>
+                    <td>${job.Posisi}</td>
+                    <td>${job.Perusahaan}</td>
+                    <td>${job.Deskripsi}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm delete-btn" data-kode="${job.Kode}">Hapus</button>
+                    </td>
+                  </tr>
+                `);
+              });
+
+              $(".delete-btn").on("click", function () {
+                const kode = $(this).data("kode");
+                deleteJob(kode);
+              });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("Request failed:", textStatus, errorThrown);
+            },
+          });
+        }
+      });
+    </script>
   </body>
 </html>
