@@ -1,21 +1,36 @@
-function filterDosen() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    
-    const table = document.getElementById('dosen-table');
-    const tr = table.getElementsByTagName('tr');
-    for (let i = 1; i < tr.length; i++) {
-        const tds = tr[i].getElementsByTagName('td');
-        let isMatch = false;
-        for (let j = 0; j < tds.length; j++) {
-            if (tds[j]) {
-                const txtValue = tds[j].textContent || tds[j].innerText;
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    isMatch = true;
-                    break;
-                }
+$(document).ready(function () {
+    // Load data alumni saat halaman dimuat
+    loadAlumniData();
+
+    // Event untuk submit form
+    $("#alumniForm").submit(function (e) {
+        e.preventDefault();
+        const formData = $(this).serialize();
+
+        $.post("proses.php", formData, function (response) {
+            alert(response.message);
+            $("#alumniForm")[0].reset();
+            loadAlumniData();
+        }, "json");
+    });
+
+    // Fungsi untuk memuat data alumni
+    function loadAlumniData() {
+        $.get("proses.php", function (data) {
+            let html = "<table><thead><tr><th>Nama</th><th>Email</th><th>Status Pekerjaan</th></tr></thead><tbody>";
+            if (data.length > 0) {
+                $.each(data, function (index, alumni) {
+                    html += `<tr>
+                                <td>${alumni.name}</td>
+                                <td>${alumni.email}</td>
+                                <td>${alumni.job_status}</td>
+                            </tr>`;
+                });
+            } else {
+                html += `<tr><td colspan="3">Belum ada data alumni.</td></tr>`;
             }
-        }
-        tr[i].style.display = isMatch ? "" : "none";
+            html += "</tbody></table>";
+            $("#alumniData").html(html);
+        }, "json");
     }
-}
+});
